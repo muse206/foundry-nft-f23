@@ -3,15 +3,15 @@
 pragma solidity ^0.8.18;
 
 import {Test, console} from "forge-std/Test.sol";
-import {DeployBasicNft} from "../script/DeployBasicNft.s.sol";
-import {BasicNft} from "../src/BasicNft.sol";
+import {DeployBasicNft} from "../../script/DeployBasicNft.s.sol";
+import {BasicNft} from "../../src/BasicNft.sol";
 
 contract BasicNftTest is Test {
     DeployBasicNft public deployer;
     BasicNft public basicNft;
     address public constant USER = address(1);
     string public constant WHALE_URI = 
-        "http://bafybeih6fjgpcs4dqmkncnbr4h3egliicebyfjpm4cpazssvf2psfwmrca.ipfs.localhost:8080/?filename=PirateWhale.png";
+        "ipfs://bafybeih6fjgpcs4dqmkncnbr4h3egliicebyfjpm4cpazssvf2psfwmrca/?filename=PirateWhale.png";
 
     function setUp() public {
         deployer = new DeployBasicNft();
